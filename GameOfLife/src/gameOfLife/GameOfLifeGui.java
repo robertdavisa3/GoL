@@ -1,6 +1,5 @@
-//Author: Robert Davis and Brennen Davis
-
 package gameOfLife;
+
 
 
 import java.awt.BorderLayout;

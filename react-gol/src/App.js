@@ -3,9 +3,11 @@ import './App.css';
 import GameBoard from './components/GameBoard';
 import Controls from './components/Controls';
 import { useGameOfLife } from './hooks/useGameOfLife';
+import { useGridConfig } from './hooks/useGridConfig';
 
 export default function App() {
-  const game = useGameOfLife();
+  const { rows, cols, cellSize, gap } = useGridConfig();
+  const game = useGameOfLife(rows, cols);
 
   return (
     <div className="app">
@@ -29,6 +31,10 @@ export default function App() {
         <div className="board-container">
           <GameBoard
             grid={game.grid}
+            rows={rows}
+            cols={cols}
+            cellSize={cellSize}
+            gap={gap}
             paintCell={game.paintCell}
           />
         </div>
